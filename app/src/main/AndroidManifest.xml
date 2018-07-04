@@ -2,7 +2,8 @@
 <manifest package="ru.tebloev.dirtycontentprovider"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
-
+    <permission
+        android:name="ru.tebloev.dirtycontentprovider.PERMISSION"/>
 
     <application
         android:allowBackup="true"
@@ -18,9 +19,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <permission
-            android:name="ru.tebloev.dirtycontentprovider.PERMISSION"/>
 
         <provider
             android:name=".provider.CustomProvider"

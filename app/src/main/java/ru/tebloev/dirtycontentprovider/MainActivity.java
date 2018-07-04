@@ -23,20 +23,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContentObserver = new MyObserver(new Handler(Looper.getMainLooper()));
-        insertData();
+
 //        readData();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-//        getContentResolver().registerContentObserver(Uri.EMPTY, true, mContentObserver);
+        getContentResolver().registerContentObserver(CONTENT_URI, true, mContentObserver);
+        insertData();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-//        getContentResolver().unregisterContentObserver(mContentObserver);
+        getContentResolver().unregisterContentObserver(mContentObserver);
     }
 
     private void changeUi() {
