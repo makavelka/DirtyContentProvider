@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="ru.tebloev.dirtycontentprovider"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <permission
+            android:name="ru.tebloev.dirtycontentprovider.PERMISSION"/>
+
+        <provider
+            android:name=".provider.CustomProvider"
+            android:permission="ru.tebloev.dirtycontentprovider.PERMISSION"
+            android:authorities="ru.tebloev.dirtycontentprovider.provider"
+            android:exported="true"
+            android:process="ru.tebloev.dirtycontentprovider.newprocess"/>
+    </application>
+
+</manifest>
